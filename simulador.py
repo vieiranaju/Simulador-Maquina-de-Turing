@@ -9,23 +9,23 @@ def lerTxt(input_file):
     with open(input_file, "r") as arquivo_txt:
         return arquivo_txt.readlines()
 
-def buscar_transicao(estado_atual, automato, read):
-    for transition in automato['transitions']:
+def buscar_transicao(estado_atual, turingMachine, read):
+    for transition in turingMachine['transitions']:
         if transition['from'] == estado_atual and transition['read'] == read:
             return (transition["to"], transition["write"], transition["dir"])
 
     return None
 
-def simularTM(automato, entrada):
-    estado_atual = automato['initial']
+def simularTM(turingMachine, entrada):
+    estado_atual = turingMachine['initial']
     index = 0
     fita = list(entrada)
-    simbolo_branco = automato['white']
+    simbolo_branco = turingMachine['white']
 
-    while estado_atual not in automato['final']:
+    while estado_atual not in turingMachine['final']:
         read = fita[index]
 
-        transicao = (buscar_transicao(estado_atual, automato, read))
+        transicao = (buscar_transicao(estado_atual, turingMachine, read))
         if transicao is None:
             break
 
@@ -44,7 +44,7 @@ def simularTM(automato, entrada):
         elif(index>=len(fita)):
             fita.append(simbolo_branco)
 
-    if estado_atual in automato['final']:
+    if estado_atual in turingMachine['final']:
         print(1)
     else:
         print(0)
