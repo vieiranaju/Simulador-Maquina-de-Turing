@@ -3,7 +3,7 @@
 
 ## 🚀 Maquina de Turing
 
-
+A Máquina de Turing consiste em uma fita infinita dividida em células, uma cabeça de leitura/escrita que se move pela fita e um conjunto de regras. Ela lê um símbolo na fita, realiza uma ação baseada nesse símbolo (como escrever um novo símbolo, mover a cabeça para a esquerda ou direita) e repete esse processo até que uma condição de parada seja alcançada.
 
 ## 💻 Sobre o projeto
 
